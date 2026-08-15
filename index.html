@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shraddha Idli Centre - South Indian and Chinese vegetarian food.">
+  <title>Shraddha Idli Centre | Home</title>
+  <style>
+:root{
+  --bg:#0b0b0b;
+  --bg2:#11110f;
+  --surface:#171613;
+  --surface2:#201e19;
+  --gold:#d6ad5b;
+  --gold2:#f1d58a;
+  --cream:#f7f1e5;
+  --text:#f6f0e4;
+  --muted:#b7b0a2;
+  --line:#3a3429;
+  --danger:#a84d43;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 0%,#332817 0,transparent 25%),
+    radial-gradient(circle at 100% 60%,#211b12 0,transparent 25%),
+    var(--bg);
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);
+  background-size:50px 50px;
+}
+nav{
+  position:sticky;top:0;z-index:50;
+  background:#090909eF;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #d6ad5b30;
+  padding:17px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+}
+nav .brand{font-size:1.25rem;font-weight:900;color:var(--cream);letter-spacing:.4px}
+nav .brand span{color:var(--gold2)}
+nav a{color:#ddd5c7;text-decoration:none;margin-left:23px;font-weight:750}
+nav a:hover{color:var(--gold2)}
+.hero{
+  min-height:84vh;display:grid;place-items:center;text-align:center;
+  padding:90px 20px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,#00000033,#00000099),
+    radial-gradient(circle at center,#5a421e22 0,#0b0b0b 62%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border:1px solid #d6ad5b45;border-radius:50%;
+  width:620px;height:620px;left:50%;top:50%;transform:translate(-50%,-50%);
+}
+.hero:after{width:470px;height:470px;border-color:#d6ad5b20}
+.hero>div{position:relative;z-index:2}
+.hero .tag{
+  display:inline-block;border:1px solid #d6ad5b80;color:var(--gold2);
+  background:#d6ad5b0d;padding:9px 18px;border-radius:30px;
+  font-size:.82rem;font-weight:900;letter-spacing:2px
+}
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,8vw,6.8rem);line-height:.95;
+  margin:22px 0 15px;letter-spacing:-3px
+}
+.hero h1 span{color:var(--gold2)}
+.hero p{font-size:1.15rem;max-width:720px;margin:0 auto 30px;line-height:1.8;color:var(--muted)}
+.btn{
+  display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#15120d;text-decoration:none;padding:14px 26px;border-radius:8px;
+  font-weight:900;margin:5px;box-shadow:0 8px 25px #0006
+}
+.btn.alt{background:transparent;color:var(--cream);border:1px solid #d6ad5b80}
+section{padding:88px 5%}
+.section-title{
+  text-align:center;margin:0 0 40px;font-family:Georgia,"Times New Roman",serif;
+  font-size:2.7rem;color:var(--cream)
+}
+.section-title span{color:var(--gold2)}
+.about{max-width:900px;margin:auto;text-align:center;line-height:2;color:var(--muted);font-size:1.03rem}
+.categories{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.filter{
+  border:1px solid var(--line);background:var(--surface);color:var(--cream);
+  padding:10px 17px;border-radius:30px;font-weight:800;cursor:pointer
+}
+.filter.active,.filter:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px;max-width:1200px;margin:auto}
+.menu-card{
+  background:linear-gradient(145deg,#1b1a16,#11110f);
+  border:1px solid var(--line);border-radius:18px;padding:24px;
+  box-shadow:0 18px 45px #0007
+}
+.menu-card:hover{border-color:#d6ad5b66;transform:translateY(-2px);transition:.2s}
+.menu-card h3{
+  margin:0 0 16px;color:var(--gold2);font-family:Georgia,"Times New Roman",serif;
+  font-size:1.45rem;border-bottom:1px solid #d6ad5b55;padding-bottom:11px
+}
+.item{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff0b}
+.item:last-child{border-bottom:0}
+.price{font-weight:900;white-space:nowrap;color:var(--gold2)}
+.add-btn{
+  border:1px solid #d6ad5b77;background:#d6ad5b14;color:var(--gold2);
+  padding:7px 11px;border-radius:7px;font-weight:900;cursor:pointer
+}
+.add-btn:hover{background:var(--gold);color:#111}
+.note{max-width:1000px;margin:28px auto 0;background:#d6ad5b0c;border:1px solid #d6ad5b33;border-radius:12px;padding:17px;color:var(--muted)}
+.contact{background:#080908;border-top:1px solid #d6ad5b22;border-bottom:1px solid #d6ad5b22}
+.contact .section-title{color:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1000px;margin:auto}
+.contact-card{background:linear-gradient(145deg,#1b1a16,#11110f);border:1px solid var(--line);border-radius:16px;padding:27px;text-align:center}
+.contact-card h3{color:var(--gold2)}
+footer{background:#050505;color:#8f897d;text-align:center;padding:28px;border-top:1px solid #d6ad5b20}
+.dish-search{max-width:760px;margin:0 auto 22px}
+.dish-search input{
+  width:100%;padding:17px 20px;border:1px solid #d6ad5b45;border-radius:12px;
+  font-size:1rem;outline:none;background:#141310;color:var(--cream)
+}
+.dish-search input::placeholder{color:#817a6d}
+.dish-search input:focus{border-color:var(--gold)}
+.search-result{max-width:760px;margin:-8px auto 25px;color:var(--muted)}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;margin:10px auto 0;max-width:760px}
+.suggestion{border:1px solid var(--line);background:var(--surface);color:var(--cream);padding:8px 12px;border-radius:20px;cursor:pointer;font-weight:800}
+.cart{
+  position:sticky;top:90px;background:linear-gradient(145deg,#1b1a16,#11110f);
+  border:1px solid #d6ad5b55;border-radius:18px;padding:24px;
+  box-shadow:0 18px 45px #0007
+}
+.cart h3{margin:0 0 14px;color:var(--gold2)}
+.cart-total{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:900;margin:20px 0;color:var(--cream)}
+.zomato-btn{
+  width:100%;border:0;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#111;padding:15px;border-radius:9px;font-weight:900;font-size:1rem;cursor:pointer
+}
+.floating-cart{
+  position:fixed;right:22px;bottom:22px;z-index:1000;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;
+  border:0;border-radius:50px;padding:15px 21px;font-weight:900;
+  box-shadow:0 10px 30px #0008;cursor:pointer;display:none
+}
+.page-hero{
+  padding:90px 20px;text-align:center;
+  background:radial-gradient(circle at center,#5a421e22,#090909 65%);
+  border-bottom:1px solid #d6ad5b22
+}
+.page-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.5rem,6vw,4.5rem);margin:10px 0}
+.page-hero span{color:var(--gold2)}
+.qty button{background:#27241f!important;color:var(--cream)!important;border:1px solid #d6ad5b33!important}
+@media(max-width:700px){
+  nav{flex-direction:column;gap:10px}
+  nav a{margin:0 6px;font-size:.88rem}
+  section{padding:60px 4%}
+  .hero h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">श्रद्धा <span>इडली सेंटर</span></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div>
+    <div class="tag">PURE VEGETARIAN • SOUTH INDIAN & CHINESE</div>
+    <h1>Shraddha <span>Idli Centre</span></h1>
+    <p>Fresh, filling and flavourful vegetarian food — from classic South Indian breakfast favourites to Chinese dishes.</p>
+    <a class="btn" href="#menu">View Full Menu</a>
+    <a class="btn alt" href="#order">🛒 Order Online</a>
+  </div>
+</header>
+<section>
+  <h2 class="section-title">Explore <span>Shraddha</span></h2>
+  <div class="contact-grid" style="max-width:1000px;margin:auto;">
+    <div class="contact-card" style="background:var(--card);color:var(--text);border:1px solid #e4dac8;">
+      <h3 style="color:var(--blue)">🍽️ Our Menu</h3>
+      <p>Explore our complete South Indian and Chinese vegetarian menu.</p>
+      <a class="btn" href="menu.html">View Menu</a>
+    </div>
+    <div class="contact-card" style="background:var(--card);color:var(--text);border:1px solid #e4dac8;">
+      <h3 style="color:var(--blue)">🛒 Order Online</h3>
+      <p>Select dishes and continue your order through Zomato.</p>
+      <a class="btn" href="order.html">Start Order</a>
+    </div>
+    <div class="contact-card" style="background:var(--card);color:var(--text);border:1px solid #e4dac8;">
+      <h3 style="color:var(--blue)">📍 Find Us</h3>
+      <p>Adinath Nagar, Gavhane Wasti, Bhosari, Pune.</p>
+      <a class="btn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Shraddha Idli Centre • All Rights Reserved
+</footer>
+
+
+</body>
+</html>
