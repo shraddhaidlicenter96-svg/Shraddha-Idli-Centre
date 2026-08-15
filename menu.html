@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shraddha Idli Centre - South Indian and Chinese vegetarian food.">
+  <title>Shraddha Idli Centre | Menu</title>
+  <style>
+:root{
+  --bg:#0b0b0b;
+  --bg2:#11110f;
+  --surface:#171613;
+  --surface2:#201e19;
+  --gold:#d6ad5b;
+  --gold2:#f1d58a;
+  --cream:#f7f1e5;
+  --text:#f6f0e4;
+  --muted:#b7b0a2;
+  --line:#3a3429;
+  --danger:#a84d43;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 0%,#332817 0,transparent 25%),
+    radial-gradient(circle at 100% 60%,#211b12 0,transparent 25%),
+    var(--bg);
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);
+  background-size:50px 50px;
+}
+nav{
+  position:sticky;top:0;z-index:50;
+  background:#090909eF;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #d6ad5b30;
+  padding:17px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+}
+nav .brand{font-size:1.25rem;font-weight:900;color:var(--cream);letter-spacing:.4px}
+nav .brand span{color:var(--gold2)}
+nav a{color:#ddd5c7;text-decoration:none;margin-left:23px;font-weight:750}
+nav a:hover{color:var(--gold2)}
+.hero{
+  min-height:84vh;display:grid;place-items:center;text-align:center;
+  padding:90px 20px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,#00000033,#00000099),
+    radial-gradient(circle at center,#5a421e22 0,#0b0b0b 62%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border:1px solid #d6ad5b45;border-radius:50%;
+  width:620px;height:620px;left:50%;top:50%;transform:translate(-50%,-50%);
+}
+.hero:after{width:470px;height:470px;border-color:#d6ad5b20}
+.hero>div{position:relative;z-index:2}
+.hero .tag{
+  display:inline-block;border:1px solid #d6ad5b80;color:var(--gold2);
+  background:#d6ad5b0d;padding:9px 18px;border-radius:30px;
+  font-size:.82rem;font-weight:900;letter-spacing:2px
+}
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,8vw,6.8rem);line-height:.95;
+  margin:22px 0 15px;letter-spacing:-3px
+}
+.hero h1 span{color:var(--gold2)}
+.hero p{font-size:1.15rem;max-width:720px;margin:0 auto 30px;line-height:1.8;color:var(--muted)}
+.btn{
+  display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#15120d;text-decoration:none;padding:14px 26px;border-radius:8px;
+  font-weight:900;margin:5px;box-shadow:0 8px 25px #0006
+}
+.btn.alt{background:transparent;color:var(--cream);border:1px solid #d6ad5b80}
+section{padding:88px 5%}
+.section-title{
+  text-align:center;margin:0 0 40px;font-family:Georgia,"Times New Roman",serif;
+  font-size:2.7rem;color:var(--cream)
+}
+.section-title span{color:var(--gold2)}
+.about{max-width:900px;margin:auto;text-align:center;line-height:2;color:var(--muted);font-size:1.03rem}
+.categories{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.filter{
+  border:1px solid var(--line);background:var(--surface);color:var(--cream);
+  padding:10px 17px;border-radius:30px;font-weight:800;cursor:pointer
+}
+.filter.active,.filter:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px;max-width:1200px;margin:auto}
+.menu-card{
+  background:linear-gradient(145deg,#1b1a16,#11110f);
+  border:1px solid var(--line);border-radius:18px;padding:24px;
+  box-shadow:0 18px 45px #0007
+}
+.menu-card:hover{border-color:#d6ad5b66;transform:translateY(-2px);transition:.2s}
+.menu-card h3{
+  margin:0 0 16px;color:var(--gold2);font-family:Georgia,"Times New Roman",serif;
+  font-size:1.45rem;border-bottom:1px solid #d6ad5b55;padding-bottom:11px
+}
+.item{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff0b}
+.item:last-child{border-bottom:0}
+.price{font-weight:900;white-space:nowrap;color:var(--gold2)}
+.add-btn{
+  border:1px solid #d6ad5b77;background:#d6ad5b14;color:var(--gold2);
+  padding:7px 11px;border-radius:7px;font-weight:900;cursor:pointer
+}
+.add-btn:hover{background:var(--gold);color:#111}
+.note{max-width:1000px;margin:28px auto 0;background:#d6ad5b0c;border:1px solid #d6ad5b33;border-radius:12px;padding:17px;color:var(--muted)}
+.contact{background:#080908;border-top:1px solid #d6ad5b22;border-bottom:1px solid #d6ad5b22}
+.contact .section-title{color:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1000px;margin:auto}
+.contact-card{background:linear-gradient(145deg,#1b1a16,#11110f);border:1px solid var(--line);border-radius:16px;padding:27px;text-align:center}
+.contact-card h3{color:var(--gold2)}
+footer{background:#050505;color:#8f897d;text-align:center;padding:28px;border-top:1px solid #d6ad5b20}
+.dish-search{max-width:760px;margin:0 auto 22px}
+.dish-search input{
+  width:100%;padding:17px 20px;border:1px solid #d6ad5b45;border-radius:12px;
+  font-size:1rem;outline:none;background:#141310;color:var(--cream)
+}
+.dish-search input::placeholder{color:#817a6d}
+.dish-search input:focus{border-color:var(--gold)}
+.search-result{max-width:760px;margin:-8px auto 25px;color:var(--muted)}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;margin:10px auto 0;max-width:760px}
+.suggestion{border:1px solid var(--line);background:var(--surface);color:var(--cream);padding:8px 12px;border-radius:20px;cursor:pointer;font-weight:800}
+.cart{
+  position:sticky;top:90px;background:linear-gradient(145deg,#1b1a16,#11110f);
+  border:1px solid #d6ad5b55;border-radius:18px;padding:24px;
+  box-shadow:0 18px 45px #0007
+}
+.cart h3{margin:0 0 14px;color:var(--gold2)}
+.cart-total{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:900;margin:20px 0;color:var(--cream)}
+.zomato-btn{
+  width:100%;border:0;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#111;padding:15px;border-radius:9px;font-weight:900;font-size:1rem;cursor:pointer
+}
+.floating-cart{
+  position:fixed;right:22px;bottom:22px;z-index:1000;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;
+  border:0;border-radius:50px;padding:15px 21px;font-weight:900;
+  box-shadow:0 10px 30px #0008;cursor:pointer;display:none
+}
+.page-hero{
+  padding:90px 20px;text-align:center;
+  background:radial-gradient(circle at center,#5a421e22,#090909 65%);
+  border-bottom:1px solid #d6ad5b22
+}
+.page-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.5rem,6vw,4.5rem);margin:10px 0}
+.page-hero span{color:var(--gold2)}
+.qty button{background:#27241f!important;color:var(--cream)!important;border:1px solid #d6ad5b33!important}
+@media(max-width:700px){
+  nav{flex-direction:column;gap:10px}
+  nav a{margin:0 6px;font-size:.88rem}
+  section{padding:60px 4%}
+  .hero h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">श्रद्धा <span>इडली सेंटर</span></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero"><h1>Our <span>Menu</span></h1><p>Search for your favourite dish.</p></div><section id="menu">
+  <h2 class="section-title">Our <span>Menu</span></h2>
+
+  <div class="dish-search">
+    <input id="dish-search" type="search" autocomplete="off"
+      placeholder="🔎 Search a dish… e.g. masla dosa, manchurain, hakka nodles">
+    <div id="suggestions" class="suggestions"></div>
+  </div>
+  <div id="search-result" class="search-result"></div>
+
+  <div class="categories">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="breakfast">Breakfast</button>
+    <button class="filter" data-filter="chinese">Chinese</button>
+    <button class="filter" data-filter="drinks">Cold Drinks</button>
+    <button class="filter" data-filter="extras">Extras</button>
+  </div>
+
+  <div class="menu-grid">
+
+    <article class="menu-card" data-category="breakfast">
+      <h3>Breakfast</h3>
+      <div class="item"><span class="item-info"><span>Idli Chutney</span><span class="price">₹40</span><button class="add-btn" type="button" onclick="addToCart('Idli Chutney', '₹40')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Idli Sambar</span><span class="price">₹40</span><button class="add-btn" type="button" onclick="addToCart('Idli Sambar', '₹40')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Single Idli</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('Single Idli', '₹20')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Udid Vada Sambar</span><span class="price">₹60</span><button class="add-btn" type="button" onclick="addToCart('Udid Vada Sambar', '₹60')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Udid Vada Chutney</span><span class="price">₹60</span><button class="add-btn" type="button" onclick="addToCart('Udid Vada Chutney', '₹60')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Batata Vada Sambar</span><span class="price">₹60</span><button class="add-btn" type="button" onclick="addToCart('Batata Vada Sambar', '₹60')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Mix Vada Sambar</span><span class="price">₹60</span><button class="add-btn" type="button" onclick="addToCart('Mix Vada Sambar', '₹60')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Single Vada Sambar</span><span class="price">₹35</span><button class="add-btn" type="button" onclick="addToCart('Single Vada Sambar', '₹35')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Vada Pav</span><span class="price">₹25</span><button class="add-btn" type="button" onclick="addToCart('Vada Pav', '₹25')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Batata Vada</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('Batata Vada', '₹20')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Plain Dosa</span><span class="price">₹70</span><button class="add-btn" type="button" onclick="addToCart('Plain Dosa', '₹70')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Masala Dosa</span><span class="price">₹80</span><button class="add-btn" type="button" onclick="addToCart('Masala Dosa', '₹80')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Cut Dosa</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Cut Dosa', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Paper Dosa</span><span class="price">₹130</span><button class="add-btn" type="button" onclick="addToCart('Paper Dosa', '₹130')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Kanda Uttappa</span><span class="price">₹80</span><button class="add-btn" type="button" onclick="addToCart('Kanda Uttappa', '₹80')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Tomato Uttappa</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Tomato Uttappa', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Schezwan Dosa</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Schezwan Dosa', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Jeera Rice</span><span class="price">₹100 / ₹170</span><button class="add-btn" type="button" onclick="addToCart('Jeera Rice', '₹100 / ₹170')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Pulao</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Pulao', '₹100 / ₹160')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="drinks">
+      <h3>Cold Drinks</h3>
+      <div class="item"><span class="item-info"><span>Pepsi</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('Pepsi', '₹20')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Mirinda</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('Mirinda', '₹20')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>7 Up</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('7 Up', '₹20')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Mountain Dew</span><span class="price">₹20</span><button class="add-btn" type="button" onclick="addToCart('Mountain Dew', '₹20')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Veg Soups</h3>
+      <div class="item"><span class="item-info"><span>Veg Manchurian Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchurian Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Manchow Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchow Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Hot & Sour Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Hot & Sour Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Talument Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Talument Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Clear Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Clear Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Tumem Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Tumem Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Tamato Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Tamato Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Royal Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Royal Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Packing Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Packing Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Find Spl Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Find Spl Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Thupaa Soup</span><span class="price">₹100</span><button class="add-btn" type="button" onclick="addToCart('Veg Thupaa Soup', '₹100')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Panner Soup</span><span class="price">₹120</span><button class="add-btn" type="button" onclick="addToCart('Veg Panner Soup', '₹120')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Veg Snacks (Dry)</h3>
+      <div class="item"><span class="item-info"><span>Veg Chilly</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Chilly', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Manchurian</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchurian', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Schezwan Chilly</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Schezwan Chilly', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg 65</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg 65', '₹120 / ₹200')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Shraddha Special</h3>
+      <div class="item"><span class="item-info"><span>Idli Manchuran</span><span class="price">₹140 / ₹230</span><button class="add-btn" type="button" onclick="addToCart('Idli Manchuran', '₹140 / ₹230')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Idli Chilly</span><span class="price">₹140 / ₹230</span><button class="add-btn" type="button" onclick="addToCart('Idli Chilly', '₹140 / ₹230')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Idli 65</span><span class="price">₹140 / ₹230</span><button class="add-btn" type="button" onclick="addToCart('Idli 65', '₹140 / ₹230')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Paneer Items</h3>
+      <div class="item"><span class="item-info"><span>Paneer Chilly</span><span class="price">₹250</span><button class="add-btn" type="button" onclick="addToCart('Paneer Chilly', '₹250')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Paneer Manchurian</span><span class="price">₹250</span><button class="add-btn" type="button" onclick="addToCart('Paneer Manchurian', '₹250')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Paneer 65</span><span class="price">₹250</span><button class="add-btn" type="button" onclick="addToCart('Paneer 65', '₹250')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Paneer Schezwan</span><span class="price">₹250</span><button class="add-btn" type="button" onclick="addToCart('Paneer Schezwan', '₹250')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Veg Rice</h3>
+      <div class="item"><span class="item-info"><span>Veg Paneer Rice</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Paneer Rice', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Fried Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Fried Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Schezwan Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Schezwan Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Singpuri Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Singpuri Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Hong Kong Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Hong Kong Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Shanghai Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Shanghai Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Combination Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Combination Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Ginger Rice</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Ginger Rice', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Shraddha Rice</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Shraddha Rice', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Triple Rice</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Triple Rice', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Manchurian Rice</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchurian Rice', '₹120 / ₹200')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Veg Noodles</h3>
+      <div class="item"><span class="item-info"><span>Veg Hakka Noodles</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Hakka Noodles', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Schezwan Noodles</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Schezwan Noodles', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Singapuri Noodles</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Singapuri Noodles', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Hongkong Noodles</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Hongkong Noodles', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Shanghai Noodles</span><span class="price">₹100 / ₹160</span><button class="add-btn" type="button" onclick="addToCart('Veg Shanghai Noodles', '₹100 / ₹160')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Manchurian Noodles</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchurian Noodles', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Triple Noodles</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Triple Noodles', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Panner Noodles</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Panner Noodles', '₹120 / ₹200')">Add</button></span></div>
+    </article>
+
+    <article class="menu-card" data-category="chinese">
+      <h3>Veg Gravy</h3>
+      <div class="item"><span class="item-info"><span>Veg Chilly Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Chilly Gravy', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Manchurian Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Manchurian Gravy', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Schezwan Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Schezwan Gravy', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg 65 Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg 65 Gravy', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Ginger Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Ginger Gravy', '₹120 / ₹200')">Add</button></span></div>
+      <div class="item"><span class="item-info"><span>Veg Garlic Gravy</span><span class="price">₹120 / ₹200</span><button class="add-btn" type="button" onclick="addToCart('Veg Garlic Gravy', '₹120 / ₹200')">Add</button></span></div>
+    </article>
+  </div>
+
+  <div class="note">
+    <strong>Extras:</strong> Sambar ₹20 • Pav ₹5 • Fried Noodles ₹30
+  </div>
+</section>
+
+<footer>
+  © 2026 Shraddha Idli Centre • All Rights Reserved
+</footer>
+
+<script>
+  const ZOMATO_URL = "https://www.zomato.com/pune/shraddha-idli-center-bopkhel";
+  const cart = JSON.parse(localStorage.getItem("shraddhaCart") || "{}");
+
+  const buttons = document.querySelectorAll(".filter");
+  const cards = document.querySelectorAll(".menu-card");
+  const searchInput = document.getElementById("dish-search");
+  const searchResult = document.getElementById("search-result");
+  const suggestions = document.getElementById("suggestions");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+      searchInput.value = "";
+      suggestions.innerHTML = "";
+      searchDishes("");
+    });
+  });
+
+  // Common spelling variations/short forms for dishes on this menu.
+  const aliases = {
+    "masala dosa": ["masla dosa", "masala doosa", "masala dosa", "masala dosha"],
+    "idli chutney": ["idly chutney", "idli chatni", "idly chatni"],
+    "idli sambar": ["idly sambar", "idli sambhar", "idly sambhar"],
+    "vada pav": ["vada paav", "wada pav", "vada pau"],
+    "batata vada": ["batata wada", "batata vada"],
+    "plain dosa": ["plain doosa", "plain dosha"],
+    "paper dosa": ["paper doosa", "paper dosha"],
+    "schezwan dosa": ["sezwan dosa", "schezwan doosa", "shejwan dosa"],
+    "veg manchurian": ["veg manchurain", "manchurian", "manchuriyan"],
+    "veg manchow soup": ["manchou soup", "manchow sup", "manchao soup"],
+    "veg hakka noodles": ["hakka nodles", "hakha noodles", "hakka noodle"],
+    "paneer manchurian": ["panner manchurian", "paneer manchurain"],
+    "paneer schezwan": ["panner schezwan", "paneer sezwan"],
+    "fried rice": ["frid rice", "fried rise"],
+    "schezwan rice": ["sezwan rice", "schezwan rise"],
+    "singapuri noodles": ["singapuri nodles", "singapore noodles"],
+    "hongkong noodles": ["hong kong nodles", "hongkong nodles"],
+    "manchurian noodles": ["manchurain noodles", "manchurian nodles"],
+    "triple noodles": ["triple nodles"],
+    "ginger rice": ["gingar rice"],
+    "garlic gravy": ["garlick gravy"],
+    "manchurian gravy": ["manchurain gravy"],
+    "sambar": ["sambhar", "sambaar", "samabar"]
+  };
+
+  function normalize(text) {
+    return text.toLowerCase()
+      .replace(/&amp;/g, "&")
+      .replace(/[^a-z0-9\u0900-\u097f]+/g, " ")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    let prev = Array.from({length: b.length + 1}, (_, i) => i);
+    for (let i = 0; i < a.length; i++) {
+      const cur = [i + 1];
+      for (let j = 0; j < b.length; j++) {
+        const cost = a[i] === b[j] ? 0 : 1;
+        cur.push(Math.min(cur[j] + 1, prev[j + 1] + 1, prev[j] + cost));
+      }
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+
+  function wordSimilarity(query, text) {
+    const qWords = normalize(query).split(" ").filter(Boolean);
+    const tWords = normalize(text).split(" ").filter(Boolean);
+    if (!qWords.length) return 0;
+
+    let total = 0;
+    for (const qw of qWords) {
+      let best = 0;
+      for (const tw of tWords) {
+        if (tw.includes(qw) || qw.includes(tw)) {
+          best = 0.95;
+          break;
+        }
+        const maxLen = Math.max(qw.length, tw.length);
+        const distance = levenshtein(qw, tw);
+        const score = 1 - distance / Math.max(1, maxLen);
+        best = Math.max(best, score);
+      }
+      total += best;
+    }
+    return total / qWords.length;
+  }
+
+  function cardTitle(card) {
+    const h = card.querySelector("h3");
+    return h ? h.textContent.trim() : "";
+  }
+
+  function getDishItems(card) {
+    return [...card.querySelectorAll(".item")].map(row => {
+      const spans = row.querySelectorAll(".item-info > span");
+      return spans[0] ? spans[0].textContent.trim() : "";
+    }).filter(Boolean);
+  }
+
+  function scoreCard(card, query) {
+    const title = cardTitle(card);
+    const items = getDishItems(card);
+    const haystack = [title, ...items].join(" ");
+    let score = wordSimilarity(query, haystack);
+
+    // Boost exact/near matches on individual dish names.
+    for (const item of items) {
+      const itemScore = wordSimilarity(query, item);
+      score = Math.max(score, itemScore + 0.15);
+      const key = normalize(item);
+      for (const [canonical, variants] of Object.entries(aliases)) {
+        if (key.includes(canonical) || canonical.includes(key)) {
+          for (const variant of variants) {
+            if (normalize(query) === normalize(variant)) score = 1.2;
+          }
+        }
+      }
+    }
+    return score;
+  }
+
+  function findBestDish(query) {
+    const q = normalize(query);
+    if (!q) return null;
+
+    let best = null;
+    cards.forEach(card => {
+      getDishItems(card).forEach(item => {
+        const score = wordSimilarity(q, item);
+        const canonical = normalize(item);
+        if (!best || score > best.score) {
+          best = {item, card, score, canonical};
+        }
+        for (const [name, variants] of Object.entries(aliases)) {
+          if (variants.some(v => normalize(v) === q) && canonical.includes(normalize(name))) {
+            best = {item, card, score: 1.5, canonical};
+          }
+        }
+      });
+    });
+    return best;
+  }
+
+  function searchDishes(query) {
+    const q = normalize(query);
+
+    if (!q) {
+      cards.forEach(card => card.style.display = "");
+      searchResult.textContent = "";
+      suggestions.innerHTML = "";
+      return;
+    }
+
+    // Find the closest individual dish first.
+    const best = findBestDish(q);
+    if (best && best.score >= 0.48) {
+      cards.forEach(card => card.style.display = card === best.card ? "" : "none");
+      searchResult.innerHTML = `Showing <strong>${escapeHtml(best.item)}</strong>. Did you mean this?`;
+      suggestions.innerHTML = `
+        <button class="suggestion" type="button" onclick="focusDish('${escapeJs(best.item)}')">
+          🍽️ ${escapeHtml(best.item)}
+        </button>`;
+      return;
+    }
+
+    // Otherwise search across categories.
+    let matches = [];
+    cards.forEach(card => {
+      const score = scoreCard(card, q);
+      if (score >= 0.42) matches.push({card, score});
+    });
+    matches.sort((a,b) => b.score - a.score);
+
+    cards.forEach(card => card.style.display = matches.some(x => x.card === card) ? "" : "none");
+
+    if (matches.length) {
+      searchResult.textContent = `Found ${matches.length} matching menu section${matches.length > 1 ? "s" : ""}.`;
+      suggestions.innerHTML = "";
+    } else {
+      // Always give a useful correction for typos.
+      const candidates = [];
+      cards.forEach(card => getDishItems(card).forEach(item => {
+        candidates.push({item, score: wordSimilarity(q, item)});
+      }));
+      candidates.sort((a,b) => b.score - a.score);
+      const top = candidates.slice(0, 3).filter(x => x.score >= 0.25);
+      cards.forEach(card => card.style.display = "");
+      if (top.length) {
+        searchResult.innerHTML = `No exact match. Did you mean <strong>${escapeHtml(top[0].item)}</strong>?`;
+        suggestions.innerHTML = top.map(x =>
+          `<button class="suggestion" type="button" onclick="focusDish('${escapeJs(x.item)}')">🍽️ ${escapeHtml(x.item)}</button>`
+        ).join("");
+      } else {
+        searchResult.textContent = "No dish found. Try another spelling.";
+        suggestions.innerHTML = "";
+      }
+    }
+  }
+
+  function focusDish(itemName) {
+    searchInput.value = itemName;
+    searchDishes(itemName);
+    const target = [...document.querySelectorAll(".item")].find(row => {
+      const s = row.querySelector(".item-info > span");
+      return s && normalize(s.textContent) === normalize(itemName);
+    });
+    if (target) target.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  searchInput.addEventListener("input", e => {
+    searchDishes(e.target.value);
+  });
+
+  function updateFloatingCart() {
+    const button = document.getElementById("floating-cart");
+    const countEl = document.getElementById("floating-cart-count");
+    const totalEl = document.getElementById("floating-cart-total");
+    if (!button || !countEl || !totalEl) return;
+
+    const items = Object.values(cart);
+    const count = items.reduce((sum, item) => sum + item.qty, 0);
+    const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    countEl.textContent = count;
+    totalEl.textContent = total;
+    button.style.display = count > 0 ? "block" : "none";
+  }
+
+  function parsePrice(priceText) {
+    const first = priceText.replace(/,/g, "").match(/\d+/);
+    return first ? Number(first[0]) : 0;
+  }
+
+  function addToCart(name, priceText) {
+    if (!cart[name]) cart[name] = {name, priceText, price: parsePrice(priceText), qty: 1};
+    else cart[name].qty++;
+    if (document.getElementById('cart-items')) renderCart();
+  updateFloatingCart();
+    document.getElementById("order").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function changeQty(name, amount) {
+    if (!cart[name]) return;
+    cart[name].qty += amount;
+    if (cart[name].qty <= 0) delete cart[name];
+    if (document.getElementById('cart-items')) renderCart();
+  updateFloatingCart();
+  }
+
+  function renderCart() {
+    const container = document.getElementById("cart-items");
+    const countEl = document.getElementById("cart-count");
+    const totalEl = document.getElementById("cart-total");
+    const orderBtn = document.getElementById("zomato-order");
+    const items = Object.values(cart);
+    const count = items.reduce((sum, item) => sum + item.qty, 0);
+    const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    countEl.textContent = `(${count})`;
+    totalEl.textContent = `₹${total}`;
+
+    if (!items.length) {
+      container.className = "cart-empty";
+      container.innerHTML = 'Your cart is empty.<br>Tap <strong>Add</strong> on a menu item.';
+      orderBtn.disabled = true;
+      return;
+    }
+
+    orderBtn.disabled = false;
+    container.className = "";
+    container.innerHTML = items.map(item => `
+      <div class="cart-row">
+        <div>
+          <div class="cart-name">${escapeHtml(item.name)}</div>
+          <div class="qty">
+            <button type="button" onclick="changeQty('${escapeJs(item.name)}', -1)">−</button>
+            <strong>${item.qty}</strong>
+            <button type="button" onclick="changeQty('${escapeJs(item.name)}', 1)">+</button>
+          </div>
+        </div>
+        <div class="cart-price">₹${item.price * item.qty}</div>
+      </div>
+    `).join("");
+  }
+
+  function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, char => ({
+      "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+    }[char]));
+  }
+
+  function escapeJs(text) {
+    return text.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  }
+
+  function orderOnZomato() {
+    if (!Object.keys(cart).length) return;
+    localStorage.setItem("shraddhaCart", JSON.stringify(cart));
+    window.open(ZOMATO_URL, "_blank", "noopener,noreferrer");
+  }
+
+  if (document.getElementById('cart-items')) renderCart();
+  updateFloatingCart();
+</script>
+
+<a id="floating-cart" class="floating-cart" href="order.html" style="text-decoration:none">
+  🛒 Cart (<span id="floating-cart-count">0</span>) • ₹<span id="floating-cart-total">0</span> →
+</a>
+</body>
+</html>
